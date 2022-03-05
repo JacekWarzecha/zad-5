@@ -1,10 +1,18 @@
 package pl.devopsi.akademia01;
 
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
+
         System.out.println("                   ZAD_1                            ");
+                         //Stwórz zmienne i przypisz do nich wartości
+                         //"val_integer typu integer z wartością 250
+                         //"val_string typu String z wartością “Akademia jest super
+                         //val_double typu zmiennoprzecinkowej z wartością 1.234555
+                         //Wyświetl wszystkie zmienne na konsoli w postaci “Zmienna X ma wartosc Y"
 
 
         int val_integer = 250;
@@ -16,8 +24,14 @@ public class Main {
         System.out.println("val_string -->" + val_string);
 
 
-        System.out.println("                  ZAD_2                             ");
 
+
+
+        System.out.println("                  ZAD_2                             ");
+                        //Zadeklaruj tablice 10 liczb typu int i przeiteruj po niej od indexu 0 do 19
+                        //(od 1 do 20). W czasie iteracji sprawdź czy dana liczba jest parzysta
+                        //(liczba%2==0), jeśli tak to wyświetla napis “Liczba X jest parzysta”,
+                        // gdzie X to dana liczba, w przeciwnym wypadku wyświetl sama liczbe.
 
         int[] tab1 = new int[20];
         tab1[0] = 10;
@@ -40,9 +54,11 @@ public class Main {
         }
 
 
+
+
+
         System.out.println("                           ZAD_3                            ");
-
-
+                            //Używając pętli while, zrób sumę liczb od 1 do 500 i ją wyświetl.
         int s = 0;
         boolean isReady2 = true;
         int sum = 0;
@@ -57,7 +73,12 @@ public class Main {
 
 
 
+
         System.out.println("                           ZAD_4                            ");
+                            //Napisz program, który obliczy średnia liczb z tablicy int
+                            //i na jej podstawie wystawi ocenę (char) (A >=4, B >=3 i <4, C < 3),
+                            //następnie używając switch wyświetla odpowiedni komunikat
+                            //w zależności od oceny (A=Super, B=Srednio, C=Slabo, Domsylnie= cos nie tak…)
 
         double[] marks = {1, 2, 3, 4, 5};
         double sum2 = 0.0;
@@ -81,17 +102,75 @@ public class Main {
                 break;
             default:
                 System.out.println("Coś nie tak..");
+        }
 
+
+
+
+        System.out.println("                           ZAD_5                            ");
+                        //Stwórz funkcje static pod funjcją main, która będzie pobierać tablicę typu double
+                        //i zwraca zmodyfikowaną tablicę bezwzględną)
+
+        double[] table5 = {2.5, -3, 12, -88.6};
+
+        Main.getDouble(table5.length);
+
+        for(int i=0; i< table5.length; i++){
+            System.out.println(Main.getDouble(table5[i]));
+        }
+
+
+
+
+
+
+
+        System.out.println("                           ZAD_6                            ");
+                            //Stwórz funkcje static pod funkcją main, która będzie pobierać imię(String)
+                            //i zwracać typ enum MEN, WOMEN w zależności od tego czy imie jest męskie czy nie
+
+
+        String names = "Iza";
+
+        Main.getGender(names);
+        System.out.println(Main.getGender(names));
+
+    }
+
+
+
+
+
+    public static char getChar(double avgmark) {
+        if (avgmark >= 4) {
+            return 'A';
+        } else if (avgmark >= 3 && avgmark < 4) {
+            return 'B';
+        } else
+            return 'C';
+    }
+
+
+    public static double getDouble(double table5){
+        return Math.abs(table5);
+    }
+
+
+
+    public static Gender getGender(String names){
+        if(names.endsWith("a")){
+            return Gender.WOMEN;
+        } else{
+            return Gender.MAN;
         }
     }
 
-        public static char getChar ( double avg){
-            if (avg >= 4) {
-                return 'A';
-            } else if (avg >= 3 && avg <4) {
-                return 'B';
-            } else
-                return 'C';
-    }
+
+
 }
+
+
+
+
+
 
